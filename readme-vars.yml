@@ -69,8 +69,8 @@ app_setup_block: |
 
   ```
   services:
-    webtop:
-      image: lscr.io/linuxserver/suyu:latest
+    xemu:
+      image: lscr.io/linuxserver/xemu:latest
       deploy:
         resources:
           reservations:
