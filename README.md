@@ -428,4 +428,5 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **07.07.25:** - Install GTK libs for file chooser.
 * **19.06.25:** - Initial release.
