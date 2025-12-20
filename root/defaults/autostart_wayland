@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run xemu
+foot -e /opt/xemu/AppRun

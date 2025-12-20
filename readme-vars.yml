@@ -107,5 +107,6 @@ init_diagram: |
   "xemu:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "20.12.25:", desc: "Add Wayland init logic."}
   - {date: "07.07.25:", desc: "Install GTK libs for file chooser."}
   - {date: "19.06.25:", desc: "Initial release."}
