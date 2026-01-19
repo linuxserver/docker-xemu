@@ -20,7 +20,8 @@ RUN \
   echo "**** install packages ****" && \
   apt-get update && \
   apt-get install -y --no-install-recommends \
-    libgtk-3-common && \
+    libgtk-3-common \
+    libusb-1.0-0 && \
   DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/xemu-project/xemu/releases/latest" \
     | awk -F '(": "|")' '/browser.*x86_64.AppImage/ && !/.*dbg.*/ {print $3}') && \
   curl -o \
