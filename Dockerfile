@@ -10,7 +10,8 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="thelamer"
 
 # title
-ENV TITLE=xemu
+ENV TITLE=xemu \
+    PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
@@ -21,6 +22,7 @@ RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends \
     libgtk-3-common \
+    libpipewire-0.3 \
     libusb-1.0-0 && \
   DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/xemu-project/xemu/releases/latest" \
     | awk -F '(": "|")' '/browser.*x86_64.AppImage/ && !/.*dbg.*/ {print $3}') && \
