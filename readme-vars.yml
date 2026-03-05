@@ -107,7 +107,7 @@ init_diagram: |
   "xemu:latest" <- Base Images
 # changelog
 changelogs:
-  - {date: "20.12.25:", desc: "Add libpipewire dep for appimage, head is broken use tag v0.8.133-ls57."}
+  - {date: "20.12.25:", desc: "Add libpipewire dep for appimage, pin to v0.8.133."}
   - {date: "20.12.25:", desc: "Add libusb dep for appimage."}
   - {date: "20.12.25:", desc: "Add Wayland init logic."}
   - {date: "07.07.25:", desc: "Install GTK libs for file chooser."}

@@ -28,7 +28,7 @@ RUN \
     | awk -F '(": "|")' '/browser.*x86_64.AppImage/ && !/.*dbg.*/ {print $3}') && \
   curl -o \
     /tmp/xemu.app -L \
-    "${DOWNLOAD_URL}" && \
+    "https://github.com/xemu-project/xemu/releases/download/v0.8.133/xemu-0.8.133-x86_64.AppImage" && \
   cd /tmp && \
   chmod +x xemu.app && \
   ./xemu.app --appimage-extract && \

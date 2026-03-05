@@ -612,7 +612,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **20.12.25:** - Add libpipewire dep for appimage, head is broken use tag v0.8.133-ls57.
+* **20.12.25:** - Add libpipewire dep for appimage, pin to v0.8.133.
 * **20.12.25:** - Add libusb dep for appimage.
 * **20.12.25:** - Add Wayland init logic.
 * **07.07.25:** - Install GTK libs for file chooser.
