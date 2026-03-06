@@ -10,7 +10,8 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="thelamer"
 
 # title
-ENV TITLE=xemu
+ENV TITLE=xemu \
+    PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
@@ -26,7 +27,7 @@ RUN \
     | awk -F '(": "|")' '/browser.*aarch64.AppImage/ && !/.*dbg.*/ {print $3}') && \
   curl -o \
     /tmp/xemu.app -L \
-    "${DOWNLOAD_URL}" && \
+    "https://github.com/xemu-project/xemu/releases/download/v0.8.133/xemu-0.8.133-aarch64.AppImage" && \
   cd /tmp && \
   chmod +x xemu.app && \
   ./xemu.app --appimage-extract && \
