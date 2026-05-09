@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
+FROM ghcr.io/linuxserver/baseimage-selkies:ubunturesolute
 
 # set version label
 ARG BUILD_DATE
@@ -21,14 +21,19 @@ RUN \
   echo "**** install packages ****" && \
   apt-get update && \
   apt-get install -y --no-install-recommends \
+    dbus-x11 \
     libgtk-3-common \
     libpipewire-0.3 \
-    libusb-1.0-0 && \
+    libusb-1.0-0 \
+    python3 \
+    python3-dbus \
+    python3-gi \
+    zenity && \
   DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/xemu-project/xemu/releases/latest" \
     | awk -F '(": "|")' '/browser.*x86_64.AppImage/ && !/.*dbg.*/ {print $3}') && \
   curl -o \
     /tmp/xemu.app -L \
-    "https://github.com/xemu-project/xemu/releases/download/v0.8.133/xemu-0.8.133-x86_64.AppImage" && \
+    "https://github.com/xemu-project/xemu/releases/download/pre-release/xemu-0.8.134-31-g7c7196b8a4-x86_64.AppImage" && \
   cd /tmp && \
   chmod +x xemu.app && \
   ./xemu.app --appimage-extract && \
