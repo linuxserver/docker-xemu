@@ -1,9 +1,4 @@
 #!/bin/bash
 
-# Fun fake xdg portal
-if ! pgrep -f "python3 /defaults/fake-xdg.py" > /dev/null; then
-  python3 /defaults/fake-xdg.py &
-fi
-
 # Run xemu
 /opt/xemu/AppRun
