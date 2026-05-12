@@ -29,11 +29,11 @@ RUN \
     python3-dbus \
     python3-gi \
     zenity && \
-  DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/xemu-project/xemu/releases/latest" \
-    | awk -F '(": "|")' '/browser.*x86_64.AppImage/ && !/.*dbg.*/ {print $3}') && \
+  DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/xemu-project/xemu/releases" \
+    | awk -F '(": "|")' '/browser.*x86_64.AppImage/ && !/.*dbg.*/ {print $3;exit}') && \
   curl -o \
     /tmp/xemu.app -L \
-    "https://github.com/xemu-project/xemu/releases/download/pre-release/xemu-0.8.134-31-g7c7196b8a4-x86_64.AppImage" && \
+    "${DOWNLOAD_URL}" && \
   cd /tmp && \
   chmod +x xemu.app && \
   ./xemu.app --appimage-extract && \

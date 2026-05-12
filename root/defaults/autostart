@@ -6,4 +6,4 @@ if ! pgrep -f "python3 /defaults/fake-xdg.py" > /dev/null; then
 fi
 
 # Run xemu
-xterm -e /opt/xemu/AppRun
+/opt/xemu/AppRun
