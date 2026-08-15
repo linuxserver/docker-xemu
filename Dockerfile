@@ -30,7 +30,7 @@ RUN \
     python3-gi \
     zenity && \
   DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/xemu-project/xemu/releases" \
-    | awk -F '(": "|")' '/browser.*x86_64.AppImage/ && !/.*dbg.*/ {print $3;exit}') && \
+    | jq -r 'first(.[].assets[].browser_download_url | select(test("x86_64.AppImage") and (test("dbg") | not)))') && \
   curl -o \
     /tmp/xemu.app -L \
     "${DOWNLOAD_URL}" && \
