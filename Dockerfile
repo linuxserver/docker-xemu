@@ -40,6 +40,7 @@ RUN \
   mv \
     squashfs-root \
     /opt/xemu && \
+  find /opt/xemu -type d -exec chmod 755 {} + && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
